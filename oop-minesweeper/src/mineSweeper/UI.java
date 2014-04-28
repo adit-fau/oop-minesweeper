@@ -61,28 +61,28 @@ public class UI {
 	private JPanel buildGrid()
 	{
 		int row=0;
-		int collumn=0;
+		int column=0;
 		JPanel mineField=new JPanel();
 		mineField.setLayout(new GridLayout(0,game.getMax()));
 		mineGrid=new JButton[game.getMax()][game.getMax()];
 		for (row=0;row<game.getMax();row++)
 		{
-			for (collumn=0;collumn<game.getMax();collumn++)
+			for (column=0;column<game.getMax();column++)
 			{
-				mineGrid[row][collumn]=new JButton();
-				mineGrid[row][collumn].setMargin(new Insets(0,0,0,0));
-            	mineGrid[row][collumn].setText(" ");
-            	mineGrid[row][collumn].setVisible(false);
-            	mineGrid[row][collumn].setActionCommand(((Integer)(row)).toString()+ "/"+((Integer)(collumn)).toString() );
-            	if(row<game.boardSize()&&collumn<game.boardSize())
+				mineGrid[row][column]=new JButton();
+				mineGrid[row][column].setMargin(new Insets(0,0,0,0));
+            	mineGrid[row][column].setText(" ");
+            	mineGrid[row][column].setVisible(false);
+            	mineGrid[row][column].setActionCommand(((Integer)(row)).toString()+ "/"+((Integer)(column)).toString() );
+            	if(row<game.boardSize()&&column<game.boardSize())
             	{
-            		mineGrid[row][collumn].setVisible(true);
+            		mineGrid[row][column].setVisible(true);
             	}
-            	mineGrid[row][collumn].setBackground(Color.gray);
-            	mineGrid[row][collumn].setForeground(Color.black);
-            	mineField.add(mineGrid[row][collumn]);     	
+            	mineGrid[row][column].setBackground(Color.gray);
+            	mineGrid[row][column].setForeground(Color.black);
+            	mineField.add(mineGrid[row][column]);     	
             	
-            	mineGrid[row][collumn].addActionListener(new ActionListener() {
+            	mineGrid[row][column].addActionListener(new ActionListener() {
       		      public void actionPerformed(ActionEvent e) {//this is action listener for left click
       		    	  
       		    	  if(((JButton)(e.getSource())).getText()==" "&& !game.gameOver())
@@ -107,7 +107,7 @@ public class UI {
             	});
             	
             	
-            	mineGrid[row][collumn].addMouseListener(new MouseAdapter(){
+            	mineGrid[row][column].addMouseListener(new MouseAdapter(){
             		public void mouseClicked(MouseEvent e){//right click listener
             			 if (e.getButton() == 3)
             			 {

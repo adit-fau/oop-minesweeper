@@ -67,10 +67,10 @@ public class Game {
 	/**
 	 * Method that makes moves
 	 * @param row >0 and <board.MAXSIZE
-	 * @param collumn >0 and <board.MAXSIZE
+	 * @param column >0 and <board.MAXSIZE
 	 * @return number of surrounding mines
 	 */
-	public int makeMove(int row,int collumn)
+	public int makeMove(int row,int column)
 	{
 		if (gameOver)
 		{
@@ -85,20 +85,20 @@ public class Game {
 
 		int surMines=-1;
 	
-		MineButton temp=board.giveIndex(row, collumn);
+		MineButton temp=board.giveIndex(row, column);
 		if(!temp.getFlagged()  && temp.getActive() )
 		{
 			if(!temp.getMine())
 			{
 				surMines=0;
-				surMines=surMines+checkIndex(row-1,collumn-1);
-				surMines=surMines+checkIndex(row-1,collumn);
-				surMines=surMines+checkIndex(row-1,collumn+1);
-				surMines=surMines+checkIndex(row,collumn-1);
-				surMines=surMines+checkIndex(row,collumn+1);
-				surMines=surMines+checkIndex(row+1,collumn-1);
-				surMines=surMines+checkIndex(row+1,collumn);
-				surMines=surMines+checkIndex(row+1,collumn+1);			
+				surMines=surMines+checkIndex(row-1,column-1);
+				surMines=surMines+checkIndex(row-1,column);
+				surMines=surMines+checkIndex(row-1,column+1);
+				surMines=surMines+checkIndex(row,column-1);
+				surMines=surMines+checkIndex(row,column+1);
+				surMines=surMines+checkIndex(row+1,column-1);
+				surMines=surMines+checkIndex(row+1,column);
+				surMines=surMines+checkIndex(row+1,column+1);			
 				if (temp.getClicked())
 				{
 					return surMines;

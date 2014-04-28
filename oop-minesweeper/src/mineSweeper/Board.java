@@ -153,12 +153,12 @@ public class Board {
 	/**
 	 * Gives a specific mine button
 	 * @param row must be >0 and <MAXSIZE
-	 * @param collumn must be >0 and <MAXSIZE
+	 * @param column must be >0 and <MAXSIZE
 	 * @return MineButton given
 	 */
-	public MineButton giveIndex(int row,int collumn)
+	public MineButton giveIndex(int row,int column)
 	{
-		return gameBoard[row][collumn];
+		return gameBoard[row][column];
 	}
 	
 	/**
