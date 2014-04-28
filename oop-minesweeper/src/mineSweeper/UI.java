@@ -214,43 +214,43 @@ public class UI {
 	/**
 	 * A recursive button press, it clears all surrounding spaces if the num of surrounding mines is 0
 	 * @param row >0 and < board size
-	 * @param collumn >0 and < board size
+	 * @param column >0 and < board size
 	 */
-	private void recButtonPress(int row, int collumn)//recursive button pressing
+	private void recButtonPress(int row, int column)//recursive button pressing
 	{
 		int bSize=game.boardSize();
-		if (row<0||row>=bSize||collumn<0||collumn>=bSize)//invalid move
+		if (row<0||row>=bSize||column<0||column>=bSize)//invalid move
 			return ;
 		
-		int temp=game.makeMove(row,collumn);		
+		int temp=game.makeMove(row,column);		
 		
-		mineGrid[row][collumn].setText(((Integer)(temp)).toString() );
+		mineGrid[row][column].setText(((Integer)(temp)).toString() );
 		if (temp==0)
 		{
 			
-			if(row>0 && mineGrid[row-1][collumn].getText()==" ")
-				recButtonPress(row-1,collumn);
+			if(row>0 && mineGrid[row-1][column].getText()==" ")
+				recButtonPress(row-1,column);
 			
-			if(row>0 &&(collumn+1<bSize) && mineGrid[row-1][collumn+1].getText()==" " )
-				recButtonPress(row-1,collumn+1);
+			if(row>0 &&(column+1<bSize) && mineGrid[row-1][column+1].getText()==" " )
+				recButtonPress(row-1,column+1);
 			
-			if(row>0 &&(collumn>0) && mineGrid[row-1][collumn-1].getText()==" ")
-				recButtonPress(row-1,collumn-1);
+			if(row>0 &&(column>0) && mineGrid[row-1][column-1].getText()==" ")
+				recButtonPress(row-1,column-1);
 			
-			if((collumn>0) && mineGrid[row][collumn-1].getText()==" " )
-				recButtonPress(row,collumn-1);
+			if((column>0) && mineGrid[row][column-1].getText()==" " )
+				recButtonPress(row,column-1);
 			
-			if((collumn+1<bSize) && mineGrid[row][collumn+1].getText()==" ")
-				recButtonPress(row,collumn+1);
+			if((column+1<bSize) && mineGrid[row][column+1].getText()==" ")
+				recButtonPress(row,column+1);
 			
-			if((row+1<bSize) &&(collumn>0) && mineGrid[row+1][collumn-1].getText()==" ")
-				recButtonPress(row+1,collumn-1);	
+			if((row+1<bSize) &&(column>0) && mineGrid[row+1][column-1].getText()==" ")
+				recButtonPress(row+1,column-1);	
 			
-			if((row+1<bSize)&& mineGrid[row+1][collumn].getText()==" ")
-				recButtonPress(row+1,collumn);
+			if((row+1<bSize)&& mineGrid[row+1][column].getText()==" ")
+				recButtonPress(row+1,column);
 			
-			if( (row+1<bSize)&&(collumn+1<bSize) && mineGrid[row+1][collumn+1].getText()==" ")
-				recButtonPress(row+1,collumn+1);
+			if( (row+1<bSize)&&(column+1<bSize) && mineGrid[row+1][column+1].getText()==" ")
+				recButtonPress(row+1,column+1);
 		}
 	}
 	/**

@@ -132,17 +132,17 @@ public class Game {
 	/**
 	 * Private method that checks if an index contains a mine
 	 * @param row >0 and <boardSize
-	 * @param collumn >0 and <boardSize
+	 * @param column >0 and <boardSize
 	 * @return 1 if it is a mine, 0 if not or out of area
 	 */
-	private int checkIndex(int row,int collumn)
+	private int checkIndex(int row,int column)
 	{
-		if(row<0||collumn<0||row>(board.getBoardSize()-1)||collumn>(board.getBoardSize()-1))
+		if(row<0||column<0||row>(board.getBoardSize()-1)||column>(board.getBoardSize()-1))
 		{
 			return 0;
 		}
 		
-		MineButton temp=board.giveIndex(row, collumn);
+		MineButton temp=board.giveIndex(row, column);
 		if (temp.getMine())
 			return 1;
 		return 0;
@@ -151,12 +151,12 @@ public class Game {
 	/**
 	 * Places a flag at a given location
 	 * @param row >0 and <boardSize
-	 * @param collumn >0 and <boardSize
+	 * @param column >0 and <boardSize
 	 * @post flag is placed at an index
 	 */
-	public void placeFlag(int row, int collumn)
+	public void placeFlag(int row, int column)
 	{
-		MineButton temp=board.giveIndex(row, collumn);
+		MineButton temp=board.giveIndex(row, column);
 		if (!temp.getFlagged() && temp.getActive() && !temp.getClicked())
 		{
 			temp.changeFlag(true);
@@ -166,12 +166,12 @@ public class Game {
 	/**
 	 * Removes a flag at an index
 	 * @param row >0 and <boardSize
-	 * @param collumn >0 and <boardSize
+	 * @param column >0 and <boardSize
 	 * @post flag is removed at an index
 	 */
-	public void removeFlag(int row, int collumn)
+	public void removeFlag(int row, int column)
 	{
-		MineButton temp=board.giveIndex(row, collumn);
+		MineButton temp=board.giveIndex(row, column);
 		if (temp.getFlagged() && temp.getActive() && !temp.getClicked())
 		{
 			temp.changeFlag(false);
