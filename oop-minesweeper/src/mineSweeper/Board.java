@@ -1,10 +1,8 @@
 /**
+ * Minesweeper clone by Colby Kerwin and Aditya Burkule
  * A class that holds the board that functions 
  * as the Model in a MVC architecture
  */
-
-
-
 
 package mineSweeper;
 

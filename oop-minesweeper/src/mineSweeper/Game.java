@@ -1,4 +1,5 @@
 /**
+ * Minesweeper clone by Colby Kerwin and Aditya Burkule
  * Class that handles all of the game logic
  * Functions as the controller in MVC architecture
  */

@@ -1,5 +1,5 @@
-
 /**
+ * Minesweeper clone by Colby Kerwin and Aditya Burkule
  * Instanciates UI
  */
 package mineSweeper;

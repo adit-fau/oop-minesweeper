@@ -1,4 +1,6 @@
-/**Class that holds state of a node in the grid
+/**
+ * Minesweeper clone by Colby Kerwin and Aditya Burkule
+ * Class that holds state of a node in the grid
  * 
  */
 package mineSweeper;

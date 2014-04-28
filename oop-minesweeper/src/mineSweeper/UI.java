@@ -1,4 +1,5 @@
 /**
+ * Minesweeper clone by Colby Kerwin and Aditya Burkule
  * A class that creates a GUI for users
  * functions as the view in MVC architecture 
  */

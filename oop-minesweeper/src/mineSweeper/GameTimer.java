@@ -1,3 +1,7 @@
+/**
+ * Minesweeper clone by Colby Kerwin and Aditya Burkule
+ * 
+ */
 package mineSweeper;
 
 public class GameTimer {
